@@ -52,6 +52,15 @@ uint8_t gmult(uint8_t a, uint8_t b) {
 */
 
 /*
+ * Multiplication in GF(2^8)
+ * http://en.wikipedia.org/wiki/Finite_field_arithmetic
+ * Irreducible polynomial m(x) = x8 + x4 + x3 + x + 1
+ *
+ * NOTE: we are using the look up table instead of the (slower) gmult function
+ */
+#define gmult(a,b) gmult_aes[256*a + b]
+
+/*
  * Addition of 4 byte words
  * m(x) = x4+1
  */
@@ -365,16 +374,12 @@ void aes_key_expansion(uint8_t* key, uint8_t* w) {
 		tmp[3] = w[4 * (i - 1) + 3];
 
 		if (i % Nk == 0) {
-
 			rot_word(tmp);
 			sub_word(tmp);
 			coef_add(tmp, Rcon(i / Nk), tmp);
-
 		}
 		else if (Nk > 6 && i % Nk == 4) {
-
 			sub_word(tmp);
-
 		}
 
 		w[4 * i + 0] = w[4 * (i - Nk) + 0] ^ tmp[0];

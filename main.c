@@ -72,7 +72,7 @@ int main() {
 					  0x10, 0x11, 0x12, 0x13,
 					  0x14, 0x15, 0x16, 0x17}; */
 
-					  /* 256 bit key */
+	/* 256 bit key */
 	uint8_t key[] = {
 		0x00, 0x01, 0x02, 0x03,
 		0x04, 0x05, 0x06, 0x07,
@@ -101,10 +101,9 @@ int main() {
 	for (i = 0; i < 4; i++) {
 		printf("%02x %02x %02x %02x ", in[4 * i + 0], in[4 * i + 1], in[4 * i + 2], in[4 * i + 3]);
 	}
-
 	printf("\n");
 
-	aes_cipher(in /* in */, out /* out */, w /* expanded key */);
+	aes_cipher(in, out, w);
 
 	printf("Ciphered message:\n");
 	for (i = 0; i < 4; i++) {
@@ -119,7 +118,6 @@ int main() {
 	for (i = 0; i < 4; i++) {
 		printf("%02x %02x %02x %02x ", in[4 * i + 0], in[4 * i + 1], in[4 * i + 2], in[4 * i + 3]);
 	}
-
 	printf("\n");
 
 	free(w);

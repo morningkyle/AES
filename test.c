@@ -43,7 +43,7 @@ int main(int argc, char * argv[])
 
 	printf("Ciphered message:\n");
 	for (int i = 0; i < 16; i++) {
-		printf("%02x,", encrypted[i]);
+		printf("%02x", encrypted[i]);
 	}
 	printf("\n");
 

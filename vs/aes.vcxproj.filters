@@ -15,13 +15,13 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\aes.c">
+    <ClCompile Include="..\main.c">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\gmult.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\main.c">
+    <ClCompile Include="..\aes.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

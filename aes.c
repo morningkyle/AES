@@ -354,7 +354,7 @@ void rot_word(uint8_t* w) {
 /*
  * Key Expansion
  */
-void aes_key_expansion(uint8_t* key, uint8_t* w) {
+void aes_key_expansion(const uint8_t* key, uint8_t* w) {
 
 	uint8_t tmp[4];
 	uint8_t i;

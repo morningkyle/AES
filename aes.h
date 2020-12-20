@@ -13,7 +13,7 @@
 uint8_t *aes_init(size_t key_size);
 
 // Transform the given key to a expanded key
-void aes_key_expansion(uint8_t *key, uint8_t *expanded);
+void aes_key_expansion(const uint8_t *key, uint8_t *expanded);
 
 // Encrypt the input with the expanded key
 void aes_cipher(uint8_t *in, uint8_t *out, uint8_t *exkey);

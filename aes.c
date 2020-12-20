@@ -84,7 +84,7 @@ int K;
  * Number of columns (32-bit words) comprising the State. For this 
  * standard, Nb = 4.
  */
-int Nb = 4;
+#define Nb  4
 
 /*
  * Number of 32-bit words comprising the Cipher Key. For this 
